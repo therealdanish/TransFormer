@@ -14,7 +14,8 @@ import { ComponentsModule } from "./components/components.module";
 import { DetailComponent } from './pages/transformer/detail/detail.component';
 import { from } from 'rxjs';
 import { DattaService } from './pages/history/datta.service';
-import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap'
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component'
 // import { TransformerComponent } from './pages/transformer/transformer.component';
 // import { HomeComponent } from './pages/home/home.component';
 // import { GraphsComponent } from './pages/graphs/graphs.component';
@@ -32,7 +33,7 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap'
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent],
   providers: [DataService, DattaService],
   bootstrap: [AppComponent]
 })

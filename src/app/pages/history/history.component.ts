@@ -18,6 +18,7 @@ export class HistoryComponent implements OnInit {
   a=[];
   t1;t2;t3;t4;t5;t6;t7;t8;t9;t10;t11;t12;t13;t14; 
   i;
+  y='';
   b=[];
   model:NgbDateStruct;
   nana:string='';
@@ -62,6 +63,7 @@ export class HistoryComponent implements OnInit {
         else{
           if(this.lol == 'Current-Voltage'){
           this.ww.innerHTML='';
+          this.y='Current and Voltage';
           this.g.getValues(this.lol,'868997035786613',this.nana,this.nana1).subscribe(data=> {
           this.a=data;
           this.b= this.a.map(obj=>{
@@ -91,6 +93,7 @@ export class HistoryComponent implements OnInit {
             }
           else if(this.lol == 'Power'){
             this.ww.innerHTML='';
+            this.y=this.lol;
             this.t1.innerHTML='WL1';
             this.t2.innerHTML='WL2';
             this.t3.innerHTML='WL3';
@@ -134,6 +137,7 @@ export class HistoryComponent implements OnInit {
     else if(this.lol=='Power-Factor'){
 
       this.ww.innerHTML='';
+      this.y='Power Factor';
       this.t1.innerHTML='PFL1';
             this.t2.innerHTML='PFL2';
             this.t3.innerHTML='PFL3';
@@ -180,6 +184,7 @@ export class HistoryComponent implements OnInit {
     else if(this.lol=='TotalPower'){
 
       this.ww.innerHTML='';
+      this.y='Total Power'
       this.t1.innerHTML='KWH';
             this.t2.innerHTML='KVARH';
             this.t3.innerHTML='KW';
@@ -219,6 +224,7 @@ export class HistoryComponent implements OnInit {
     else if(this.lol=='overview'){
 
       this.ww.innerHTML='';
+      this.y='Alarm and Trips';
       this.t1.innerHTML='OTI_A';
             this.t2.innerHTML='WTI_A';
             this.t3.innerHTML='GOR_A';
