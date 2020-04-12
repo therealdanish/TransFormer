@@ -15,13 +15,13 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-align-center",
     class: ""
   },
-  {
-    path: "/lol",
-    title: "GGraph",
-    rtlTitle: "لوحة القيادة",
-    icon: "icon-align-center",
-    class: ""
-  },
+  // {
+  //   path: "/lol",
+  //   title: "GGraph",
+  //   rtlTitle: "لوحة القيادة",
+  //   icon: "icon-align-center",
+  //   class: ""
+  // },
   {
     path: "/graphs",
     title: "Graphs",
@@ -29,13 +29,13 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-chart-bar-32",
     class: ""
   },
-  {
-    path: "/reports",
-    title: "Reports",
-    rtlTitle: "لوحة القيادة",
-    icon: "icon-notes",
-    class: ""
-  },
+  // {
+  //   path: "/reports",
+  //   title: "Reports",
+  //   rtlTitle: "لوحة القيادة",
+  //   icon: "icon-notes",
+  //   class: ""
+  // },
   {
     path: "/history",
     title: "History",

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
 import { GrrService } from './grr.service';
+import 'chartjs-plugin-zoom';
 
 
 @Component({
@@ -17,6 +18,10 @@ l=[];
 g=[];
 j=[];
 k=[];
+q;
+w1;
+w2;
+w3;
 nana:string='';
 nana1:string='';
 gan =[];
@@ -39,8 +44,12 @@ cta;
           this.ww.innerHTML='Start Date is greater than End Date';
         }
         else{
-          if(this.lol == 'Current-Voltage'){
-           this.ww.innerHTML= ''; 
+             if(this.lol == 'Current'){
+           this.ww.innerHTML= '';
+           this.w1='IL1';
+           this.w2='IL2';
+           this.w3='IL3';
+           this.lol="Current-Voltage"; 
           this.f.getit(this.lol,'868997035786613',this.nana,this.nana1).subscribe(data=>{
                     console.log(data);
                     this.l=data;
@@ -63,24 +72,74 @@ cta;
                       rbs['y']=rbs['y']= obs.IL3;
                       return rbs;
                     });
-                    // this.j=this.l.map(obs=>{
-                    
-                      
-                      
-                    //    let y= new Date(obs.DeviceTimeStamp)
-                    //    return y;
-
-                    // });
                     console.log(this.g);
-                    
-                    //console.log(this.j);
-          //           for(let i=0;i<4;i++){
-          //               this.gan[i]=this.g[i];
-                        
-          //  }
-                  
-          });
+                  });
           }
+          else if(this.lol == 'Voltage'){
+            this.ww.innerHTML= '';
+            this.w1='VL1';
+           this.w2='VL2';
+           this.w3='VL3';
+            this.lol="Current-Voltage"; 
+           this.f.getit(this.lol,'868997035786613',this.nana,this.nana1).subscribe(data=>{
+                     console.log(data);
+                     this.l=data;
+                     this.g=this.l.map(obs=>{
+                       let robjs={};
+                       robjs['x']=new Date(obs.DeviceTimeStamp);
+                       robjs['y']= obs.VL1;
+                       return robjs;
+                     
+                     });
+                     this.j=this.l.map(obs=>{
+                       let rbs={};
+                       rbs['x']=new Date(obs.DeviceTimeStamp);
+                       rbs['y']=rbs['y']= obs.VL2;
+                       return rbs;
+                     });
+                     this.k=this.l.map(obs=>{
+                       let rbs={};
+                       rbs['x']=new Date(obs.DeviceTimeStamp);
+                       rbs['y']= obs.VL3;
+                       return rbs;
+                     });
+                     console.log(this.g);
+                     
+           });
+           }
+           else  if(this.lol == 'Temp'){
+            this.ww.innerHTML= '';
+            this.w1='ATI';
+           this.w2='OTI';
+           this.w3='WTI';
+           this.lol="overview"; 
+           this.f.getit(this.lol,'868997035786613',this.nana,this.nana1).subscribe(data=>{
+                     console.log(data);
+                     this.l=data;
+                     this.g=this.l.map(obs=>{
+                       let robjs={};
+                       robjs['x']=new Date(obs.DeviceTimeStamp);
+                       robjs['y']= obs.ATI;
+                       return robjs;
+                     
+                     });
+                     this.j=this.l.map(obs=>{
+                       let rbs={};
+                       rbs['x']=new Date(obs.DeviceTimeStamp);
+                       rbs['y']= obs.OTI;
+                       return rbs;
+                     });
+                     this.k=this.l.map(obs=>{
+                       let rbs={};
+                       rbs['x']=new Date(obs.DeviceTimeStamp);
+                       rbs['y']= obs.WTI;
+                       return rbs;
+                     });
+                     console.log(this.g);
+                     
+           });
+           }
+          
           // console.log(this.gang);
           var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
 
@@ -105,7 +164,7 @@ cta;
             type: 'line',
             data: {
                 datasets: [{
-                    label: 'IL1',
+                    label: this.w1,
                     data: this.g,
                     backgroundColor: gradientStroke,
                          //'rgba(255, 99, 132,0.2)'
@@ -136,7 +195,7 @@ cta;
                     
                 },
                 {
-                  label: 'IL2',
+                  label: this.w2,
                   data: this.j,
                   backgroundColor: gradientStroke2,
                      //'rgba(54, 162, 235, 0.2)'
@@ -163,7 +222,7 @@ cta;
                   borderWidth: 2
               },
               {
-                label: 'IL3',
+                label: this.w3,
                 data: this.k,
                 backgroundColor: gradientStroke3,
                    // 'rgb(153, 255, 153,0.2)'
@@ -215,6 +274,21 @@ cta;
                       type: 'time',
                       distribution: 'series'
                     }]
+                },
+                pan: {
+                  enabled: true,
+                  mode: 'x',
+                  speed: 10,
+                  threshold: 10
+                },
+                zoom: {
+                  enabled: true,
+                  mode: 'xy',
+                  drag:false,
+                  limits: {
+                    max: 10,
+                    min: 0.5
+                  }
                 }
             }
         });
