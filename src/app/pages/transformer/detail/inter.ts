@@ -1,0 +1,107 @@
+export interface Herro{
+    A_id?:number,
+    DeviceImei?:number,
+    DeviceTimeStamp?:string,
+    WL1?:number,
+    WL2?:number,
+    WL3?:number,
+    VAL1?:number,
+    VAL2?:number,
+    VAL3?:number,
+    RVAL1?:number,
+    RVAL2?:number,
+    RVAL3?:number
+    };
+
+    export interface fall{
+        A_id?:number,
+        DeviceImei?:number,
+        DeviceTimeStamp?:string,
+        VL1?:number,
+        VL2?:number,
+        VL3?:number,
+        IL1?:number,
+        IL2?:number,
+        IL3?:number,
+        VL12?:number,
+        VL23?:number,
+        VL31?:number,
+        AVL?:number,
+        INUT?:number
+    }
+
+    export interface esc{
+        A_id?:number,
+        DeviceImei?:number,
+        DeviceTimeStamp?:string,
+        PFL1?:number,
+        PFL2?:number,
+        PFL3?:number,
+        Avg_PF?:number,
+        Sum_PF?:number,
+        FRQ?:number,
+        THDVL1?:number,
+        THDVL2?:number,
+        THDVL3?:number,
+        THDIL1?:number,
+        THDIL2?:number,
+        THDIL3?:number,
+        MDIL1?:number,
+        MDIL2?:number,
+        MDIL3?:number
+        }
+
+        export interface hil{
+            A_id?:number,
+            DeviceImei?:number,
+            DeviceTimeStamp?:string,
+            KWH?:number,
+            KWH_I?:number,
+            KVARH?:number,
+            Sum_I?:number,
+            KW?:number,
+            KVA?:number,
+            KVAR?:number,
+            MPD?:number,
+            MKVAD?:number
+            }
+
+
+        export interface mono
+        {A_id?:number,
+            EventId?:number,
+            DeviceImei?:number,
+            DeviceTimeStamp?:string,
+            OTI?:number,
+            WTI?:number,
+            ATI?:number,
+            OLI?:number,
+            MachineName?:string,
+            OTI_A?:number,
+            OTI_T?:number,
+            WTI_A?:number,
+            WTI_T?:number,
+            GOR_A?:number,
+            GOR_T?:number,
+            MOG_A?:number,
+            SR_T?:number,
+            PRV_T?:number,
+            OLTC_WTI?:number,
+            HUM?:number,
+            OLTCSURGE?:number,
+            OLTC_PRV?:number,
+            FAN1?:number,
+            FAN2?:number,
+            IN1?:number,
+            IN2?:number,
+            OUT1?:number,
+            OUT2?:number,
+            OUT3?:number,
+            OUT4?:number,
+            OUT5?:number,
+            Pressure?:number,
+            GridStatus?:number,
+            ROilT?:number,
+            RWindT?:number,
+            RAmbT?:number
+            }

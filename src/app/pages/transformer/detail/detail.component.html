@@ -1,0 +1,91 @@
+<div class=" content">
+    <div class=" row">
+      <div class=" col-md-12">
+        <div class=" card">
+          <div class=" card-header" >
+            <h3 class=" title" >ID : {{q.DeviceImei}}<span style="position: absolute;right: 10px;">{{today | date:'hh:mm aa'}}|{{today | date}}</span></h3>  
+             
+          </div>
+            <div class="card-body">
+              <div class=" row">
+              <div class=" font-icon-list col-lg-4 col-md-2 col-sm-2 col-xs-2 col-xs-1" >
+              <div class=" font-icon-detail"style="padding: 6px;border-radius: 20px;border-width:2px;border-color:#FD5D93;">
+                <div style="background-color: #FD5D93;border-radius: 20px;">
+                <h3 style="text-align: center;">Current & Voltage</h3>
+                </div>
+                <h4 style="text-align: left;"><b>INUT</b> : {{k.INUT}}<span style="position: absolute;left:230px;"><b>AVL</b> : {{k.AVL}}</span></h4>
+                <h4 style="text-align: left;"><b>VL1</b> : {{k.VL1}}<span style="position: absolute;left:230px;"><b>VL2</b> : {{k.VL2}}</span></h4>
+                <h4 style="text-align: left;"><b>VL3</b> : {{k.VL3}}<span style="position: absolute;left:230px;"><b>IL1</b> : {{k.IL1}}</span></h4>
+                <h4 style="text-align: left;"><b>IL2</b> : {{k.IL2}}<span style="position: absolute;left:230px;"><b>IL3</b> : {{k.IL3}}</span></h4>
+                <h4 style="text-align: left;"><b>VL12</b> : {{k.VL12}}<span style="position: absolute;left:230px;"><b>VL23</b> : {{k.VL23}}</span></h4>
+                <h4 style="text-align: left;"><b>VL31</b> : {{k.VL31}}</h4>
+                <h4 style="text-align: right;"><b>{{k.DeviceTimeStamp}}</b></h4>
+                </div>
+                </div>
+              <div class=" font-icon-list col-lg-4 col-md-2 col-sm-4 col-xs-6 col-xs-6" >
+                <div class=" font-icon-detail" style="padding: 5px;border-radius:20px;border-width:2px;border-color: #FD5D93;">
+                  <div style="background-color: #FD5D93;border-radius: 20px;">
+                  <h3 style="text-align: center;">Power</h3>
+                </div>
+                <h4 style="text-align: left;"><b>WL1</b> : {{q.WL1}}<span style="position: absolute;left:200px;"><b>RVAL3</b> : {{q.RVAL3}}</span></h4>
+                <h4 style="text-align: left;"><b>WL2</b> : {{q.WL2}}<span style="position: absolute;left:200px;"><b>WL3</b> : {{q.WL3}}</span></h4>
+                <h4 style="text-align: left;"><b>VAL1</b> : {{q.VAL1}}<span style="position: absolute;left:200px;"><b>VAL2</b> : {{q.VAL2}}</span></h4>
+                <h4 style="text-align: left;"><b>VAL3</b> : {{q.VAL3}}<span style="position: absolute;left:200px;"><b>RVAL1</b> : {{q.RVAL1}}</span></h4>
+                <h4 style="text-align: left;"><b>RVLA2</b> : {{q.RVAL2}}</h4>
+                <br>
+                <br>
+                <h4 style="text-align: right;"><b> {{q.DeviceTimeStamp}}</b></h4>
+                </div>
+                </div>
+                <div class=" font-icon-list col-lg-4 col-md-2 col-sm-4 col-xs-6 col-xs-6" >
+                  <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93 ">
+                    <div style="background-color: #FD5D93;border-radius: 20px;">
+                    <h3 style="text-align: center;">Power Factor</h3>
+                  </div>
+                  <h4 style="text-align: left;"><b>FRQ</b> : {{h.FRQ}}<span style="position: absolute;left:210px;"><b>THDIL2</b>   : {{h.THDIL2}}</span></h4>
+                  <h4 style="text-align: left;"><b>PFL1</b> : {{h.PFL1}}<span style="position: absolute;left:210px;"><b>PFL2</b> : {{h.PFL2}}</span></h4>
+                  <h4 style="text-align: left;"><b>PFL3</b> : {{h.PFL3}}<span style="position: absolute;left:210px;"><b>AVG_PF</b> : {{h.AVG_PF}}</span></h4>
+                  <h4 style="text-align: left;"><b>SUM_PF</b> : {{h.SUM_PF}}<span style="position: absolute;left:210px;"><b>THDVL1</b> : {{h.THDVL1}}</span></h4>
+                  <h4 style="text-align: left;"><b>THDVL2</b> : {{h.THDVL2}}<span style="position: absolute;left:210px;"><b>THDVL3</b> : {{h.THDVL3}}</span></h4>
+                  <h4 style="text-align: left;"><b>THDIL1</b> : {{h.THDIL1}}</h4>
+                  <!--<h4 style="text-align: left;"><b>THDIL3</b> : {{h.THDIL3}}<span style="position: absolute;left:210px;"><b>MDIL1</b>   : {{h.MDIL1}}</span></h4>
+                  <h4 style="text-align: left;"><b>MDIL2</b> : {{h.MDIL2}}<span style="position: absolute;left:210px;"><b>MDIL3</b>   : {{h.MDIL3}}</span></h4>                 
+                  -->
+                  <h4 style="text-align: right;"><b>{{h.DeviceTimeStamp}}</b></h4>
+                  </div>
+                  </div>
+                  <div class=" font-icon-list col-lg-4 col-md-2 col-sm-4 col-xs-6 col-xs-6" >
+                    <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
+                      <div style="background-color: #FD5D93;border-radius: 20px;">
+                      <h3 style="text-align: center;">Overview</h3>
+                    </div>
+                  <h4 style="text-align: left;"><b>FAN1</b> : {{l.FAN1}}</h4>
+                  <h4 style="text-align: left;"><b>FAN2</b> : {{l.FAN2}}</h4>
+                  <h4 style="text-align: left;"><b>OLTC_PRV</b> : {{l.OLTC_PRV}}</h4>
+                  <h4 style="text-align: left;"><b>OLTCSURGE</b> : {{l.OLTCSURGE}}</h4>
+                  <h4 style="text-align: left;"><b>Machine Name</b> : {{l.MachineName}}</h4>
+                  <br>
+                  <h4 style="text-align: right;"><b>{{l.DeviceTimeStamp}}</b></h4>
+                    </div>
+                    </div>
+                    <div class=" font-icon-list col-lg-4 col-md-2 col-sm-4 col-xs-6 col-xs-6" >
+                      <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
+                        <div style="background-color: #FD5D93;border-radius: 20px;">
+                        <h3 style="text-align: center;">Total Power</h3>
+                        </div>
+                        <h4 style="text-align: left;"><b>KWH</b> : {{a.KWH}}<span style="position: absolute;left:210px;"><b>PFL2</b> : {{a.KVARH}}</span></h4>
+                        <h4 style="text-align: left;"><b>KVARH</b> : {{a.KVARSH}}<span style="position: absolute;left:210px;"><b>SUM_I</b> : {{a.SUM_I}}</span></h4>
+                        <h4 style="text-align: left;"><b>KW</b> : {{a.KW}}<span style="position: absolute;left:210px;"><b>KVA</b> : {{a.KVA}}</span></h4>
+                        <h4 style="text-align: left;"><b>KVAR</b> : {{a.KVAR}}<span style="position: absolute;left:210px;"><b>MPD</b> : {{a.MPD}}</span></h4>
+                        <h4 style="text-align: left;"><b>MKVAD</b> : {{a.MKVAD}}</h4>
+                        <br>
+                        <h4 style="text-align: right;"><b>{{a.DeviceTimeStamp}}</b></h4>
+                      </div>
+                      </div>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+</div>

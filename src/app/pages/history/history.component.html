@@ -1,0 +1,125 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h1 class=" title" style="text-align: center;">History</h1>
+        </div>
+        <div class="card-body">
+          <div class=row>
+            <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
+              <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
+                <div style="background-color: #FD5D93;border-radius: 20px;">
+                <h3 style="text-align: center;">Current and Voltage</h3>
+                </div>
+                <div>
+                <form class="form-inline" >
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label style="font-size: 150%;margin-right: 5px;">Date Start: </label>
+                      <input type="date" placeholder="yyyy-mm-dd"
+                             name="dp" [(ngModel)]="nana" style="background-color: #222A42;border-radius: 20px;color: white;" >
+                            </div>
+                  </div>
+                </form>
+                             <label style="font-size: 150%;margin-right: 5px;position: absolute;left: 22px;">Date End: </label>
+                       <input type="date" placeholder="yyyy-mm-dd"
+                                    name="dp1" [(ngModel)]="nana1" style="background-color: #222A42;border-radius: 20px;color: white;position: absolute;left:125px" >
+                      
+               <br><br>
+               <label for="cars" style="font-size: 150%;position: absolute;left: 23px;">Choose a parameter:</label>
+
+               <select id="cars" [(ngModel)]="lol" style="background-color:#222A42 ;color: white;border-radius: 20px;margin-left: 5px;position: absolute;left:250px">
+                 <option value="Current-Voltage">Current and Voltage</option>
+                 <option value="Power">Power</option>
+                 <option value="Power-Factor">Power Factor</option>
+                 <option value="TotalPower">Total Power</option>
+                 <option value="overview">Alarms And Trips</option>
+               </select>
+               {{lol}}
+               <br><br>
+                <h3 style="text-align: left;">ID: 613</h3>
+                <button style="border-radius: 20px;background-color:#FD5D93;position: absolute;left: 25px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga()">Submit</button>
+                     <h4 id="warn" style="color: red;" ></h4>
+              </div>
+              <br>
+              <br>
+              
+            
+            </div>
+            </div>
+            <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
+              <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
+                
+                <table class="table table-striped" id="excel-table">
+                <thead>
+                <tr>
+                  <th scope="col">Time</th>
+                  <th id="t1" scope="col">IL1</th>
+                  <th id="t2" scope="col">IL2</th>
+                  <th id="t3" scope="col">IL3</th>
+                  <th id="t4" scope="col">VL1</th>
+                  <th id="t5" scope="col">VL2</th>
+                  <th id="t6" scope="col">VL3</th>
+                  <th id="t7" scope="col">VL12</th>
+                  <th id="t8" scope="col">VL23</th>
+                  <th id="t9" scope="col">VL31</th>
+                  <th id="t10" scope="col">AVL</th>
+                  <th id="t11" scope="col">INUT</th>
+                  <th id="t12" scope="col"></th>
+                  <th id="t13" scope="col"></th>
+                  <th id="t14" scope="col"></th>
+
+                </tr>
+              </thead>
+                <tbody>
+                <tr *ngFor="let country of pageOfItems;let i = index" style="color: white;">
+                  
+                  <td id="z0" >{{country[0]}}</td>
+                  <td><span id="z1">{{ country[1]}}</span></td>
+                  <td id="z2" >{{ country[2]   }}</td>
+                  <td id="z3" >{{ country[3]    }} </td>
+                  <td id="z4" >{{ country[4]    }} </td>
+                  <td id="z5" >{{ country[5]    }} </td>
+                  <td id="z6" >{{ country[6]    }} </td>
+                  <td id="z7">{{ country[7]   }}</td>
+                  <td id="z8">{{ country[8]   }}</td>
+                  <td id="z9">{{ country[9]   }}</td>
+                  <td id="z10">{{ country[10]   }}</td>
+                  <td id="z11">{{ country[11]   }}</td>
+                  <td id="z12">{{country[12]}}</td>
+                  <td id="z13">{{country[13]}}</td>
+                  <td id="z14">{{country[14]}}</td>
+                  
+                </tr>
+              </tbody>
+              </table>
+              
+              <div class="card-footer pb-0 pt-3">
+                <jw-pagination [items]="b" (changePage)="onChangePage($event)"></jw-pagination>
+                
+                
+            </div>
+              
+                
+              
+            
+            
+              </div>
+              <a style="cursor: pointer" (click)="exportexcel()">Click here
+              </a>
+          </div>
+            
+            <div>
+           
+        </div>
+          <!-- <div class="heyyya" *ngFor="let l of a ">
+            <h3>{{l.A_id}}</h3> -->
+          
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
