@@ -16,6 +16,10 @@ import { from } from 'rxjs';
 import { DattaService } from './pages/history/datta.service';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component'
+import { LogginService } from './login/loggin.service';
+import {GfoGuard} from './login/gfo.guard';
+import { JwtHelperService} from '@auth0/angular-jwt';
+import { LlgGuard } from './login/llg.guard';
 // import { TransformerComponent } from './pages/transformer/transformer.component';
 // import { HomeComponent } from './pages/home/home.component';
 // import { GraphsComponent } from './pages/graphs/graphs.component';
@@ -34,7 +38,7 @@ import { LoginComponent } from './login/login.component'
     ToastrModule.forRoot()
   ],
   declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent],
-  providers: [DataService, DattaService],
+  providers: [DataService, DattaService, LogginService,GfoGuard, JwtHelperService,LlgGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
