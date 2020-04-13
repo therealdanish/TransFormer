@@ -1,21 +1,42 @@
-<div class=" content">
+<main class=" wrapper">
     <div class=" row">
-      <div class=" col-md-4" style="position: absolute;right: 500px;top: 150px;">
-        <div class=" card">
+      <div style="position: absolute;left:100px;top:100px;color: white;">
+        <strong>fdsfsdf</strong>
+      </div>
+      <div  style="position: absolute;right: 75px;top: 100px;border-width:5px;width:300px;">
+        <div class=" card" style="border-width:5px;border-radius: 20px;background-color: black;opacity:70%;">
           <div class=" card-header">
-            <h3 class=" title" style="text-align: center;">Login </h3>
+            <h3 class=" title" style="text-align: center;font-size: 250%;">Login </h3>
           </div>
           <div class="card-body">
             <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
-                <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
                 
+                    <form [formGroup]="loginform" novalidate>
+                        <div class="form-group">
+                          <label style="font-size: 150%;" >Name:</label>
+                            <input class="form-control" style="width: 250px;" formControlName="Name" [(ngModel)]="k">
+                            <!-- <div *ngIf="k == ''" class="alert alert-danger" style="height: px;"> -->
+                                 <!-- <div *ngIf="Name.errors.minlength">  -->
+                                <h5 *ngIf="k == ''">Name is required.</h5>
+                              <!-- </div> -->
+                            <!-- </div> -->
+                            <h2 id="warn"></h2>
+                            <label style="font-size: 150%;" >Password:</label>
+                            <input class="form-control" style="width: 250px;" formControlName="Password" [(ngModel)]="j">
+                            <h5 *ngIf="j == ''">Password is required.</h5>
+                            <h5 style="color: red;" id="warn1"></h5>
+                        </div>
+                        <button class="btn btn-success" [disabled]="(k && j) == ''" (click)=dd(loginform)>Submit</button>
+                  </form>
+                  <!-- <button class="btn btn-danger" [disabled]="(Name?.invalid && Password?.invalid) == 1">Submit</button> -->
                   </div>
                   </div>
+                  
 
 
-          </div>
+         
         </div>
     </div>
   </div>
-</div>
+</main>
 
