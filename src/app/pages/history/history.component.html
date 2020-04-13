@@ -10,26 +10,26 @@
             <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
               <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
                 <div style="background-color: #FD5D93;border-radius: 20px;">
-                <h3 style="text-align: center;">Current and Voltage</h3>
+                <h3 style="text-align: center;">Choose the Options</h3>
                 </div>
                 <div>
                 <form class="form-inline" >
                   <div class="form-group">
                     <div class="input-group">
-                      <label style="font-size: 150%;margin-right: 5px;">Date Start: </label>
-                      <input type="date" placeholder="yyyy-mm-dd"
-                             name="dp" [(ngModel)]="nana" style="background-color: #222A42;border-radius: 20px;color: white;" >
+                      <label style="font-size: 150%;">Date Start: </label>
+                      <input class="form-control" type="date" placeholder="yyyy-mm-dd"
+                             name="dp" [(ngModel)]="nana" style="background-color: #222A42;border-radius: 20px;color: white;border-color:#FD5D93;position: absolute;left:120px;width: 200px;" >
                             </div>
                   </div>
                 </form>
                              <label style="font-size: 150%;margin-right: 5px;position: absolute;left: 22px;">Date End: </label>
-                       <input type="date" placeholder="yyyy-mm-dd"
-                                    name="dp1" [(ngModel)]="nana1" style="background-color: #222A42;border-radius: 20px;color: white;position: absolute;left:125px" >
+                       <input class="form-control" type="date" placeholder="yyyy-mm-dd"
+                                    name="dp1" [(ngModel)]="nana1" style="background-color: #222A42;border-radius: 20px;color: white;position: absolute;left:125px;border-color:#FD5D93;width: 200px" >
                       
                <br><br>
                <label for="cars" style="font-size: 150%;position: absolute;left: 23px;">Choose a parameter:</label>
 
-               <select id="cars" [(ngModel)]="lol" style="background-color:#222A42 ;color: white;border-radius: 20px;margin-left: 5px;position: absolute;left:250px">
+               <select class="form-control" id="cars" [(ngModel)]="lol" style="background-color:#222A42 ;color: white;border-radius: 20px;margin-left: 5px;position: absolute;left:250px; width: 200px;border-color:#FD5D93 ;">
                  <option value="Current-Voltage">Current and Voltage</option>
                  <option value="Power">Power</option>
                  <option value="Power-Factor">Power Factor</option>
@@ -39,7 +39,7 @@
                {{lol}}
                <br><br>
                 <h3 style="text-align: left;">ID: 613</h3>
-                <button style="border-radius: 20px;background-color:#FD5D93;position: absolute;left: 25px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga()">Submit</button>
+                <button class="btn btn-danger btn-sm" style="position: absolute;left: 25px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga()">Submit</button>
                      <h4 id="warn" style="color: red;" ></h4>
               </div>
               <br>
@@ -57,17 +57,17 @@
                 <thead>
                 <tr>
                   <th scope="col">Time</th>
-                  <th id="t1" scope="col">IL1</th>
-                  <th id="t2" scope="col">IL2</th>
-                  <th id="t3" scope="col">IL3</th>
-                  <th id="t4" scope="col">VL1</th>
-                  <th id="t5" scope="col">VL2</th>
-                  <th id="t6" scope="col">VL3</th>
-                  <th id="t7" scope="col">VL12</th>
-                  <th id="t8" scope="col">VL23</th>
-                  <th id="t9" scope="col">VL31</th>
-                  <th id="t10" scope="col">AVL</th>
-                  <th id="t11" scope="col">INUT</th>
+                  <th id="t1" scope="col"></th>
+                  <th id="t2" scope="col"></th>
+                  <th id="t3" scope="col"></th>
+                  <th id="t4" scope="col"></th>
+                  <th id="t5" scope="col"></th>
+                  <th id="t6" scope="col"></th>
+                  <th id="t7" scope="col"></th>
+                  <th id="t8" scope="col"></th>
+                  <th id="t9" scope="col"></th>
+                  <th id="t10" scope="col"></th>
+                  <th id="t11" scope="col"> </th>
                   <th id="t12" scope="col"></th>
                   <th id="t13" scope="col"></th>
                   <th id="t14" scope="col"></th>
@@ -108,7 +108,7 @@
             
             
               </div>
-              <a style="cursor: pointer" (click)="exportexcel()">Click here
+              <a style="cursor: pointer;color: #FD5D93;" (click)="exportexcel()">Download
               </a>
           </div>
             

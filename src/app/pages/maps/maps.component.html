@@ -3,9 +3,16 @@
       <div class=" col-md-12">
         <div class=" card">
           <div class=" card-header">
-            <h3 class=" title" style="text-align: center;">Maps </h3>
+            <h1 class=" title" style="text-align: center;">Maps </h1>
           </div>
         </div>
     </div>
+    <div class=" col-md-12">
+      <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+        <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+
+    </div>
   </div>
+
 </div>
