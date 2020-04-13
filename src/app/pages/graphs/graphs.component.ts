@@ -18,6 +18,7 @@ l=[];
 g=[];
 j=[];
 k=[];
+b='';
 q;
 w1;
 w2;
@@ -46,6 +47,7 @@ cta;
         else{
              if(this.lol == 'Current'){
            this.ww.innerHTML= '';
+           this.b=this.lol;
            this.w1='IL1';
            this.w2='IL2';
            this.w3='IL3';
@@ -77,6 +79,7 @@ cta;
           }
           else if(this.lol == 'Voltage'){
             this.ww.innerHTML= '';
+            this.b=this.lol;
             this.w1='VL1';
            this.w2='VL2';
            this.w3='VL3';
@@ -109,6 +112,7 @@ cta;
            }
            else  if(this.lol == 'Temp'){
             this.ww.innerHTML= '';
+            this.b='Temperature';
             this.w1='ATI';
            this.w2='OTI';
            this.w3='WTI';
@@ -277,7 +281,7 @@ cta;
                 },
                 pan: {
                   enabled: true,
-                  mode: 'x',
+                  mode: 'xy',
                   speed: 10,
                   threshold: 10
                 },

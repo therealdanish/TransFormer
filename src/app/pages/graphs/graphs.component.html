@@ -1,28 +1,34 @@
 <div class=" content">
     <div class=" row">
+      <div class=" col-md-12">
+        <div class=" card">
+          <div class=" card-header">
+            <h1 class=" title" style="text-align: center;">Graphs</h1>
+          </div>
+          <div class="card-body">
       <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
         <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
           <div style="background-color: #FD5D93;border-radius: 20px;">
-          <h3 style="text-align: center;">Current and Voltage</h3>
+          <h3 style="text-align: center;">Choose the Options</h3>
           </div>
           <div>
           <form class="form-inline" >
             <div class="form-group">
               <div class="input-group">
                 <label style="font-size: 150%;margin-right: 5px;">Date Start: </label>
-                <input type="date" placeholder="yyyy-mm-dd"
-                       name="dp" [(ngModel)]="nana" style="background-color: #222A42;border-radius: 20px;color: white;" >
+                <input class="form-control"type="date" placeholder="yyyy-mm-dd"
+                       name="dp" [(ngModel)]="nana" style="border-radius: 20px;border-color:#FD5D93;position: absolute;left:120px;width: 200px;" >
                       </div>
             </div>
           </form>
                        <label style="font-size: 150%;margin-right: 5px;position: absolute;left: 22px;">Date End: </label>
-                 <input type="date" placeholder="yyyy-mm-dd"
-                              name="dp1" [(ngModel)]="nana1" style="background-color: #222A42;border-radius: 20px;color: white;position: absolute;left:125px" >
+                 <input class="form-control" type="date" placeholder="yyyy-mm-dd"
+                              name="dp1" [(ngModel)]="nana1" style="border-radius: 20px;border-color:#FD5D93;color: white;position: absolute;left:125px;width: 200px;" >
                 
          <br><br>
          <label for="cars" style="font-size: 150%;position: absolute;left: 23px;">Choose a parameter:</label>
 
-         <select id="cars" [(ngModel)]="lol" style="background-color:#222A42 ;color: white;border-radius: 20px;margin-left: 5px;position: absolute;left:250px">
+         <select class="form-control" id="cars" [(ngModel)]="lol" placeholder="Parameter" style="background-color:#222A42;color: white;border-radius: 20px;margin-left: 5px;position: absolute;left:250px;width:200px;border-color:#FD5D93 ;">
            <option value="Current">Current</option>
            <option value="Voltage">Voltage</option>
            <option value="Temp">Temperature</option>
@@ -32,7 +38,7 @@
          {{lol}}
          <br><br>
           <h3 style="text-align: left;">ID: 613</h3>
-          <button style="border-radius: 20px;background-color:#FD5D93;position: absolute;left: 25px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga1(5)">Submit</button>
+          <button class="btn btn-danger btn-sm" style="position: absolute;left: 25px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga1(5)">Submit</button>
                <h4 id="warn" style="color: red;" ></h4>
         </div>
         <br>
@@ -46,7 +52,7 @@
           <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
             <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
               <div style="background-color: #FD5D93;border-radius: 20px;">
-              <h3 style="text-align: center;">Current and Voltage</h3>
+              <h3 style="text-align: center;">{{b}}</h3>
               </div>
               <div >
               <canvas id="myChart"></canvas>
@@ -54,6 +60,8 @@
             </div>
               </div>
         </div>
-    
+    </div>
+    </div>
+    </div>
   </div>
   

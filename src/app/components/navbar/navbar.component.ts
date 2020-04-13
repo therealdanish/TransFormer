@@ -3,6 +3,8 @@ import { ROUTES } from "../sidebar/sidebar.component";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { LogginService } from 'src/app/login/loggin.service';
+import { LoginComponent } from 'src/app/login/login.component';
 
 @Component({
   selector: "app-navbar",
@@ -15,7 +17,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   mobile_menu_visible: any = 0;
   private toggleButton: any;
   private sidebarVisible: boolean;
-
+y;
   public isCollapsed = true;
 
   closeResult: string;
@@ -24,11 +26,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
     location: Location,
     private element: ElementRef,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private s:LogginService
+    
+    
   ) {
     this.location = location;
     this.sidebarVisible = false;
   }
+
+  
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
    updateColor = () => {
    var navbar = document.getElementsByClassName('navbar')[0];
@@ -40,7 +47,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
        navbar.classList.add('navbar-transparent');
      }
    };
+   logg(){
+    this.s.lg();
+   }
   ngOnInit() {
+    this.y=localStorage.getItem('CurrentUser');
+    // console.log(localStorage.getItem('CurrentUser'));
     window.addEventListener("resize", this.updateColor);
     this.listTitles = ROUTES.filter(listTitle => listTitle);
     const navbar: HTMLElement = this.element.nativeElement;

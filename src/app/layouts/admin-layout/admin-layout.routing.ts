@@ -13,6 +13,7 @@ import { HomeComponent } from 'src/app/pages/home/home.component';
 import { ReportsComponent } from 'src/app/pages/reports/reports.component';
 import { MapsComponent } from 'src/app/pages/maps/maps.component';
 import { DetailComponent } from 'src/app/pages/transformer/detail/detail.component';
+import {GfoGuard} from '../../login/gfo.guard';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
@@ -23,12 +24,12 @@ export const AdminLayoutRoutes: Routes = [
   // { path: "user", component: UserComponent },
   // { path: "tables", component: TablesComponent },
   // { path: "typography", component: TypographyComponent },
-  { path: "lol", component: DashboardComponent},
-  { path: "history", component: HistoryComponent},
-  { path:"graphs", component: GraphsComponent},
-  { path:"reports",component: ReportsComponent },
-  { path: "dashboard", component:HomeComponent } ,
-  { path: "maps", component:MapsComponent },
-  { path:"transformer/detail", component:DetailComponent}
+  { path: "lol", component: DashboardComponent,canActivate:[GfoGuard]},
+  { path: "history", component: HistoryComponent,canActivate:[GfoGuard]},
+  { path:"graphs", component: GraphsComponent,canActivate:[GfoGuard]},
+  { path:"reports",component: ReportsComponent,canActivate:[GfoGuard] },
+  { path: "dashboard", component:HomeComponent,canActivate:[GfoGuard] } ,
+  { path: "maps", component:MapsComponent,canActivate:[GfoGuard] },
+  { path:"transformer/detail", component:DetailComponent,canActivate:[GfoGuard]}
   // { path: "rtl", component: RtlComponent }
 ];
