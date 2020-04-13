@@ -4,6 +4,9 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {fall} from '../transformer/detail/inter';
 import * as $ from 'jquery';
 import * as XLSX from 'xlsx'; 
+import { Subject } from 'rxjs';
+import{debounceTime} from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,7 +15,8 @@ import * as XLSX from 'xlsx';
 })
 
 export class HistoryComponent implements OnInit {
-  constructor(private g:DattaService) {}
+  constructor(private g:DattaService,
+              private toastr:ToastrService) {}
 
   month:string[]=['January','February','March','April','May','June','July','August','September','October','Novermber','December'];
   a=[];
@@ -20,12 +24,18 @@ export class HistoryComponent implements OnInit {
   i;
   y='';
   b=[];
+  name;
   model:NgbDateStruct;
   nana:string='';
   nana1:string='';
   iss:boolean=true;
   lol:string='';
   ww;
+  from='top';
+  align='left';
+  private _success= new Subject<string>();
+  staticAlertClosed = false;
+  successMessage = '';
   z;
   page = 1;
   pageSize = 4;
@@ -35,6 +45,13 @@ export class HistoryComponent implements OnInit {
   
   
   ngOnInit() {
+    // setTimeout(() => this.staticAlertClosed = true, 20000);
+
+    // this._success.subscribe(message => this.successMessage = message);
+    // this._success.pipe(
+    //   debounceTime(5000)
+    // ).subscribe(() => this.successMessage = '');
+  
       this.ww=<HTMLInputElement>document.getElementById("warn");
       this.t1=<HTMLInputElement>document.getElementById("t1");
       this.t2=<HTMLInputElement>document.getElementById("t2");
@@ -63,6 +80,21 @@ export class HistoryComponent implements OnInit {
         else{
           if(this.lol == 'Current-Voltage'){
           this.ww.innerHTML='';
+          this.name='CurrandVolt';
+          this.t1.innerHTML='IL1';
+            this.t2.innerHTML='IL2';
+            this.t3.innerHTML='IL3';
+            this.t4.innerHTML='VL1';
+            this.t5.innerHTML='VL2';
+            this.t6.innerHTML='VL3';
+            this.t7.innerHTML='VL12';
+            this.t8.innerHTML='VL23';
+            this.t9.innerHTML='VL31';
+            this.t10.innerHTML='ALV';
+            this.t11.innerHTML='INUT';
+            this.t12.innerHTML='';
+            this.t13.innerHTML='';
+            this.t14.innerHTML='';
           this.y='Current and Voltage';
           this.g.getValues(this.lol,'868997035786613',this.nana,this.nana1).subscribe(data=> {
           this.a=data;
@@ -93,6 +125,7 @@ export class HistoryComponent implements OnInit {
             }
           else if(this.lol == 'Power'){
             this.ww.innerHTML='';
+            this.name='Power';
             this.y=this.lol;
             this.t1.innerHTML='WL1';
             this.t2.innerHTML='WL2';
@@ -137,6 +170,7 @@ export class HistoryComponent implements OnInit {
     else if(this.lol=='Power-Factor'){
 
       this.ww.innerHTML='';
+      this.name='PowerwFactor'
       this.y='Power Factor';
       this.t1.innerHTML='PFL1';
             this.t2.innerHTML='PFL2';
@@ -184,6 +218,7 @@ export class HistoryComponent implements OnInit {
     else if(this.lol=='TotalPower'){
 
       this.ww.innerHTML='';
+      this.name='TotalPower'
       this.y='Total Power'
       this.t1.innerHTML='KWH';
             this.t2.innerHTML='KVARH';
@@ -225,6 +260,7 @@ export class HistoryComponent implements OnInit {
 
       this.ww.innerHTML='';
       this.y='Alarm and Trips';
+      this.name='AlarmandTrips';
       this.t1.innerHTML='OTI_A';
             this.t2.innerHTML='WTI_A';
             this.t3.innerHTML='GOR_A';
@@ -273,7 +309,15 @@ export class HistoryComponent implements OnInit {
     this.pageOfItems = pageOfItems;
 }
 exportexcel(): void 
-    {
+    {   
+      // this._success.next('Download started ');
+      this.toastr.info('<span class="tim-icons icon-bell-55" [data-notify]="icon"></span> Download has Started', '', {
+        disableTimeOut: true,
+        closeButton: true,
+        enableHtml: true,
+        toastClass: "alert alert-info alert-with-icon",
+        positionClass: 'toast-' + this.from + '-' +this.align
+      });
        /* table id is passed over here */   
        let element = document.getElementById('excel-table'); 
        const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
@@ -283,7 +327,8 @@ exportexcel(): void
        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
        /* save to file */
-       XLSX.writeFile(wb, 'Heyyya.xlsx');
+       this.name=this.name+'.xlsx'
+       XLSX.writeFile(wb, this.name);
 			
     }
 }

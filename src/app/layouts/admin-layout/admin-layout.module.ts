@@ -20,7 +20,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TransformerComponent } from 'src/app/pages/transformer/transformer.component';
 import { MapsComponent } from 'src/app/pages/maps/maps.component';
 import { DetailComponent } from 'src/app/pages/transformer/detail/detail.component';
-
+import { AgmCoreModule}   from '@agm/core';
 @NgModule({
   imports: [
     CommonModule,
@@ -28,9 +28,13 @@ import { DetailComponent } from 'src/app/pages/transformer/detail/detail.compone
     FormsModule,
     HttpClientModule,
     NgbModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCclG7w5m1rAyb_KxV8cp2eY4FsTtTm7Bs'
+    })
   ],
   declarations: [
      DashboardComponent,
+     
     // UserComponent,
     // TablesComponent,
     // IconsComponent,
@@ -43,7 +47,8 @@ import { DetailComponent } from 'src/app/pages/transformer/detail/detail.compone
     GraphsComponent,
     ReportsComponent,
     HistoryComponent,
-    TransformerComponent
+    TransformerComponent,
+    
     // RtlComponent
   ]
 })
