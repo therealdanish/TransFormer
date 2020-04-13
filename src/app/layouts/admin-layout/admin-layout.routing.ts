@@ -1,16 +1,13 @@
 import { Routes } from "@angular/router";
 
-import { DashboardComponent } from "../../pages/dashboard/dashboard.component";
-import { IconsComponent } from "../../pages/icons/icons.component";
+
 import { HistoryComponent } from "../../pages/history/history.component";
-import { NotificationsComponent } from "../../pages/notifications/notifications.component";
 import { UserComponent } from "../../pages/user/user.component";
-import { TablesComponent } from "../../pages/tables/tables.component";
-import { TypographyComponent } from "../../pages/typography/typography.component";
+
 import{ TransformerComponent } from  "../../pages/transformer/transformer.component";
 import { GraphsComponent } from 'src/app/pages/graphs/graphs.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
-import { ReportsComponent } from 'src/app/pages/reports/reports.component';
+
 import { MapsComponent } from 'src/app/pages/maps/maps.component';
 import { DetailComponent } from 'src/app/pages/transformer/detail/detail.component';
 import {GfoGuard} from '../../login/gfo.guard';
@@ -24,10 +21,10 @@ export const AdminLayoutRoutes: Routes = [
   // { path: "user", component: UserComponent },
   // { path: "tables", component: TablesComponent },
   // { path: "typography", component: TypographyComponent },
-  { path: "lol", component: DashboardComponent,canActivate:[GfoGuard]},
+  
   { path: "history", component: HistoryComponent,canActivate:[GfoGuard]},
   { path:"graphs", component: GraphsComponent,canActivate:[GfoGuard]},
-  { path:"reports",component: ReportsComponent,canActivate:[GfoGuard] },
+
   { path: "dashboard", component:HomeComponent,canActivate:[GfoGuard] } ,
   { path: "maps", component:MapsComponent,canActivate:[GfoGuard] },
   { path:"transformer/detail", component:DetailComponent,canActivate:[GfoGuard]}
