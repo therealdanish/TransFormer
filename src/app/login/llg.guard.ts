@@ -15,9 +15,10 @@ export class LlgGuard implements CanActivate {
     state: RouterStateSnapshot): boolean {
         if(localStorage.getItem('CurrentUser')){
 
-          this.router.navigate[('/#/dashboard')];
+          
           return false;
         }
+       
       return true;
 
   }

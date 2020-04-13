@@ -14,43 +14,31 @@ const routes: Routes = [
     path: "", 
     redirectTo: "login",
     pathMatch: "full",
-    canActivate:[GfoGuard]
+   
   },
   {
     path: "login",
-    component: LoginComponent,
-    pathMatch: "full",
-    canActivate:[LlgGuard]
+    component: LoginComponent
   },
   {
     path: "",
     component: AdminLayoutComponent,
-    canActivate:[GfoGuard],
+   canActivate:[GfoGuard],
     children: [
       {
         path: "",
         loadChildren:
           "./layouts/admin-layout/admin-layout.module#AdminLayoutModule",
           canActivate:[GfoGuard]
+      
       }
     ]
   }, 
-    {
-    path: '',
-    component: AuthLayoutComponent,
-    canActivate:[GfoGuard],
-    children: [
-      {
-        path: '',
-        loadChildren: './layouts/auth-layout/auth-layout.module#AuthLayoutModule',
-        canActivate:[GfoGuard],
-      }
-    ]
-  },
+    
   {
     path: "**",
-    redirectTo: "dashboard",
-    canActivate:[GfoGuard]
+    redirectTo:'login'
+    
   }
 ];
 
@@ -58,9 +46,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

@@ -26,7 +26,7 @@ l;
 
     if(localStorage.getItem('CurrentUser')){
 
-      this.router.navigate[('#/dashboard')];
+      this.router.navigate(['dashboard']);
     }
     this.loginform=this.fb.group({
 		  'Name':['', 
@@ -61,7 +61,7 @@ l;
           else if((data =='Logged-in Successfully !!!')){
             this.l.innerHTML='';
             localStorage.setItem('CurrentUser',this.k);
-            this.router.navigate(['#/dashboard']);
+            this.router.navigate(['dashboard']);
        
             
           }
