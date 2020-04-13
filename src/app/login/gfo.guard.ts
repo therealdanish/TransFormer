@@ -20,10 +20,11 @@ export class GfoGuard implements CanActivate {
    
         if(localStorage.getItem('CurrentUser')){
          
+         
           return true;
         }
-     this.router.navigate[('/#/login')]   
-     return false ;
+     
+     this.router.navigate(['login']);
   }
   
 }
