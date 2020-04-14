@@ -47,7 +47,7 @@
                 <table class="table table-striped" id="excel-table">
                 <thead>
                 <tr>
-                  <th scope="col">Date & Time</th>
+                  <th scope="col" id="t0"></th>
                   <th id="t1" scope="col"></th>
                   <th id="t2" scope="col"></th>
                   <th id="t3" scope="col"></th>
@@ -99,8 +99,8 @@
             
             
               </div>
-              <a style="cursor: pointer;color: #FD5D93;" (click)="exportexcel()">Download
-              </a>
+              <button class="btn btn-danger btn-sm" [disabled]="yui" (click)="exportexcel()">Download
+              </button>
           </div>
             
             <div>
