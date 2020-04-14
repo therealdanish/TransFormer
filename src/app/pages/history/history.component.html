@@ -16,47 +16,38 @@
                 <form class="form-inline" >
                   <div class="form-group">
                     <div class="input-group">
-                      <label style="font-size: 150%;">Date Start: </label>
+                      <label style="font-size: 150%;">From: </label>
                       <input class="form-control" type="date" placeholder="yyyy-mm-dd"
-                             name="dp" [(ngModel)]="nana" style="background-color: #222A42;border-radius: 20px;color: white;border-color:#FD5D93;position: absolute;left:120px;width: 200px;" >
+                             name="dp" [(ngModel)]="nana" style="background-color: #222A42;border-radius: 20px;color: white;border-color:#FD5D93;position: absolute;left:60px;width: 200px;" >
                             </div>
                   </div>
                 </form>
-                             <label style="font-size: 150%;margin-right: 5px;position: absolute;left: 22px;">Date End: </label>
+                             <label style="font-size: 150%;margin-right: 5px;position: absolute;left: 290px;top:85px;">To: </label>
                        <input class="form-control" type="date" placeholder="yyyy-mm-dd"
-                                    name="dp1" [(ngModel)]="nana1" style="background-color: #222A42;border-radius: 20px;color: white;position: absolute;left:125px;border-color:#FD5D93;width: 200px" >
+                                    name="dp1" [(ngModel)]="nana1" style="background-color: #222A42;border-radius: 20px;color: white;position: absolute;left:330px;border-color:#FD5D93;width: 200px;top:85px;" >
                       
-               <br><br>
-               <label for="cars" style="font-size: 150%;position: absolute;left: 23px;">Choose a parameter:</label>
+              
+               <label for="cars" style="font-size: 150%;position: absolute;left: 540px;top: 85px;">Parameter:</label>
 
-               <select class="form-control" id="cars" [(ngModel)]="lol" style="background-color:#222A42 ;color: white;border-radius: 20px;margin-left: 5px;position: absolute;left:250px; width: 200px;border-color:#FD5D93 ;">
+               <select class="form-control" id="cars" [(ngModel)]="lol" style="background-color:#222A42 ;color: white;border-radius: 20px;position: absolute;left:660px; width: 200px;border-color:#FD5D93;top:85px">
                  <option value="Current-Voltage">Current and Voltage</option>
                  <option value="Power">Power</option>
                  <option value="Power-Factor">Power Factor</option>
                  <option value="TotalPower">Total Power</option>
                  <option value="overview">Alarms And Trips</option>
                </select>
-               {{lol}}
-               <br><br>
-                <h3 style="text-align: left;">ID: 613</h3>
-                <button class="btn btn-danger btn-sm" style="position: absolute;left: 25px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga()">Submit</button>
+               
+                <button class="btn btn-danger btn-sm" style="position: absolute;left: 870px;top:85px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga()">Submit</button>
                      <h4 id="warn" style="color: red;" ></h4>
               </div>
-              <br>
-              <br>
-              
-            
-            </div>
-            </div>
-            <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
-              <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
+
                 <div style="background-color: #FD5D93;border-radius: 20px;">
                   <h3 style="text-align: center;">{{y}}</h3>
                   </div> 
                 <table class="table table-striped" id="excel-table">
                 <thead>
                 <tr>
-                  <th scope="col">Time</th>
+                  <th scope="col">Date & Time</th>
                   <th id="t1" scope="col"></th>
                   <th id="t2" scope="col"></th>
                   <th id="t3" scope="col"></th>

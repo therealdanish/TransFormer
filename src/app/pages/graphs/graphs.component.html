@@ -12,45 +12,41 @@
           <h3 style="text-align: center;">Choose the Options</h3>
           </div>
           <div>
-          <form class="form-inline" >
-            <div class="form-group">
-              <div class="input-group">
-                <label style="font-size: 150%;margin-right: 5px;">Date Start: </label>
-                <input class="form-control"type="date" placeholder="yyyy-mm-dd"
-                       name="dp" [(ngModel)]="nana" style="border-radius: 20px;border-color:#FD5D93;position: absolute;left:120px;width: 200px;" >
-                      </div>
-            </div>
-          </form>
-                       <label style="font-size: 150%;margin-right: 5px;position: absolute;left: 22px;">Date End: </label>
-                 <input class="form-control" type="date" placeholder="yyyy-mm-dd"
-                              name="dp1" [(ngModel)]="nana1" style="border-radius: 20px;border-color:#FD5D93;color: white;position: absolute;left:125px;width: 200px;" >
+            <form class="form-inline" >
+              <div class="form-group">
+                <div class="input-group">
+                  <label style="font-size: 150%;">From: </label>
+                  <input class="form-control" type="date" placeholder="yyyy-mm-dd"
+                         name="dp" [(ngModel)]="nana" style="background-color: #222A42;border-radius: 20px;color: white;border-color:#FD5D93;position: absolute;left:60px;width: 200px;" >
+                        </div>
+              </div>
+            </form>
+                         <label style="font-size: 150%;margin-right: 5px;position: absolute;left: 290px;top:70px;">To: </label>
+                   <input class="form-control" type="date" placeholder="yyyy-mm-dd"
+                                name="dp1" [(ngModel)]="nana1" style="background-color: #222A42;border-radius: 20px;color: white;position: absolute;left:330px;border-color:#FD5D93;width: 200px;top:70px;" >
                 
-         <br><br>
-         <label for="cars" style="font-size: 150%;position: absolute;left: 23px;">Choose a parameter:</label>
+         
+         <label for="cars" style="font-size: 150%;position: absolute;left: 540px;top:73px">Parameter:</label>
 
-         <select class="form-control" id="cars" [(ngModel)]="lol" placeholder="Parameter" style="background-color:#222A42;color: white;border-radius: 20px;margin-left: 5px;position: absolute;left:250px;width:200px;border-color:#FD5D93 ;">
+         <select class="form-control" id="cars" [(ngModel)]="lol" placeholder="Parameter" style="background-color:#222A42;color: white;border-radius: 20px;position: absolute;left:660px;width:200px;border-color:#FD5D93 ;top:70px">
            <option value="Current">Current</option>
            <option value="Voltage">Voltage</option>
            <option value="Temp">Temperature</option>
            <!-- <option value="TotalPower">Total Power</option>
            <option value="overview">Alarms And Trips</option> -->
          </select>
-         {{lol}}
-         <br><br>
-          <h3 style="text-align: left;">ID: 613</h3>
-          <button class="btn btn-danger btn-sm" style="position: absolute;left: 25px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga1(5)">Submit</button>
+   
+         
+          <button class="btn btn-danger btn-sm" style="position: absolute;left: 870px;top:70px;" [disabled]="((nana && nana1 && lol) == '')" (click)="gaga1(5)">Submit</button>
                <h4 id="warn" style="color: red;" ></h4>
         </div>
-        <br>
-        <br>
+        
         
       
-      </div>
-      </div>
-        </div>
-        <div class="row">
-          <div class=" font-icon-list col-lg-12 col-md-2 col-sm-4 col-xs-6 col-xs-6">
-            <div class=" font-icon-detail"style="padding: 5px;border-width: 2px;border-radius: 20px;border-color: #FD5D93">
+
+ 
+       
+         
               <div style="background-color: #FD5D93;border-radius: 20px;">
               <h3 style="text-align: center;">{{b}}</h3>
               </div>
