@@ -10,7 +10,7 @@ import { DataService } from '../transformer/data.service';
 export class MapsComponent implements OnInit {
 
   constructor(private g:DataService) { }
-  texto : string = 'Wenceslau Braz - Cuidado com as cargas';
+  
   lat: number = 17.3920;
   lng: number = 78.3194;
   h:string='http://maps.google.com/mapfiles/ms/micons/green-dot.png';

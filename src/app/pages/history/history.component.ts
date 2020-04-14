@@ -20,7 +20,7 @@ export class HistoryComponent implements OnInit {
 
   month:string[]=['January','February','March','April','May','June','July','August','September','October','Novermber','December'];
   a=[];
-  t1;t2;t3;t4;t5;t6;t7;t8;t9;t10;t11;t12;t13;t14; 
+  t1;t2;t3;t4;t5;t6;t7;t8;t9;t10;t11;t12;t13;t14;t0; 
   i;
   y='';
   b=[];
@@ -42,6 +42,7 @@ export class HistoryComponent implements OnInit {
   collectionSize = this.a.length;
   pageOfItems: Array<any>;  
   baba=true;
+  yui=true;
   
   
   ngOnInit() {
@@ -67,6 +68,7 @@ export class HistoryComponent implements OnInit {
       this.t12=<HTMLInputElement>document.getElementById("t12");
       this.t13=<HTMLInputElement>document.getElementById("t13");
       this.t14=<HTMLInputElement>document.getElementById("t14");
+      this.t0=document.getElementById('t0');
       
       
   }
@@ -78,9 +80,11 @@ export class HistoryComponent implements OnInit {
           this.ww.innerHTML='Start Date is greater than End Date';
         }
         else{
+          this.yui=false;
           if(this.lol == 'Current-Voltage'){
           this.ww.innerHTML='';
           this.name='CurrandVolt';
+          this.t0.innerHTML='Date & Time';
           this.t1.innerHTML='IL1';
             this.t2.innerHTML='IL2';
             this.t3.innerHTML='IL3';
@@ -102,7 +106,7 @@ export class HistoryComponent implements OnInit {
             let rObj = {} 
             let r:string=obj.DeviceTimeStamp;
             let n:number = +(r.substring(5,7));
-            rObj[0]= r.substring(8,10)+' '+this.month[n -1] +' '+r.substring(11,16);
+            rObj[0]= r.substring(8,10)+' '+this.month[n -1] +' '+r.substring(0,4)+' '+r.substring(11,16);
             rObj[1]=obj.IL1; 
             rObj[2]=obj.IL2;
             rObj[3]=obj.IL3;
@@ -127,6 +131,7 @@ export class HistoryComponent implements OnInit {
             this.ww.innerHTML='';
             this.name='Power';
             this.y=this.lol;
+            this.t0.innerHTML='Date & Time';
             this.t1.innerHTML='WL1';
             this.t2.innerHTML='WL2';
             this.t3.innerHTML='WL3';
@@ -149,7 +154,7 @@ export class HistoryComponent implements OnInit {
               let rObj = {} 
               let r:string=obj.DeviceTimeStamp;
               let n:number = +(r.substring(5,7));
-              rObj[0]= r.substring(8,10)+' '+this.month[n -1] +' '+r.substring(11,16);
+              rObj[0]= r.substring(8,10)+' '+this.month[n -1]+' '+r.substring(0,4) +' '+r.substring(11,16);
               rObj[1]= obj.WL1;
               rObj[2]= obj.WL2;
               rObj[3]= obj.WL3;
@@ -172,6 +177,7 @@ export class HistoryComponent implements OnInit {
       this.ww.innerHTML='';
       this.name='PowerwFactor'
       this.y='Power Factor';
+      this.t0.innerHTML='Date & Time';
       this.t1.innerHTML='PFL1';
             this.t2.innerHTML='PFL2';
             this.t3.innerHTML='PFL3';
@@ -219,7 +225,8 @@ export class HistoryComponent implements OnInit {
 
       this.ww.innerHTML='';
       this.name='TotalPower'
-      this.y='Total Power'
+      this.y='Total Power';
+      this.t0.innerHTML='Date & Time';
       this.t1.innerHTML='KWH';
             this.t2.innerHTML='KVARH';
             this.t3.innerHTML='KW';
@@ -261,6 +268,7 @@ export class HistoryComponent implements OnInit {
       this.ww.innerHTML='';
       this.y='Alarm and Trips';
       this.name='AlarmandTrips';
+      this.t0.innerHTML='Date & Time';
       this.t1.innerHTML='OTI_A';
             this.t2.innerHTML='WTI_A';
             this.t3.innerHTML='GOR_A';
