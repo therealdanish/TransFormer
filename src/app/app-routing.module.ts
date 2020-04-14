@@ -8,6 +8,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { LoginComponent } from './login/login.component';
 import { GfoGuard } from './login/gfo.guard';
 import { LlgGuard } from './login/llg.guard';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -41,13 +42,16 @@ const routes: Routes = [
     
   }
 ];
-
+export const appRouting = RouterModule.forRoot(routes);
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
+
 })
+
 export class AppRoutingModule {}

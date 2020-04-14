@@ -11,8 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: "app-history",
-  templateUrl: "history.component.html"
-})
+  templateUrl: "./history.component.html"
+}) 
 
 export class HistoryComponent implements OnInit {
   constructor(private g:DattaService,

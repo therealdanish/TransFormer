@@ -9,7 +9,7 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import {DataService} from './pages/transformer/data.service';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule, appRouting } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { DetailComponent } from './pages/transformer/detail/detail.component';
 import { from } from 'rxjs';
@@ -33,7 +33,7 @@ import { LlgGuard } from './login/llg.guard';
     HttpClientModule,
     ComponentsModule,
     NgbModule,
-    RouterModule,
+    appRouting,
     AppRoutingModule,
     ToastrModule.forRoot()
   ],

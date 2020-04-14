@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 
 import { HistoryComponent } from "../../pages/history/history.component";
@@ -23,6 +23,7 @@ import { AgmCoreModule}   from '@agm/core';
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     NgbModule,
@@ -39,7 +40,7 @@ import { AgmCoreModule}   from '@agm/core';
     // TypographyComponent,
     // NotificationsComponent,
     HomeComponent,
-    JwPaginationComponent,
+   
     DetailComponent,
     MapsComponent,
     HistoryComponent,
@@ -47,6 +48,7 @@ import { AgmCoreModule}   from '@agm/core';
   
     HistoryComponent,
     TransformerComponent,
+    JwPaginationComponent
     
     // RtlComponent
   ]

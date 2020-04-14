@@ -11,6 +11,7 @@ import { HomeComponent } from 'src/app/pages/home/home.component';
 import { MapsComponent } from 'src/app/pages/maps/maps.component';
 import { DetailComponent } from 'src/app/pages/transformer/detail/detail.component';
 import {GfoGuard} from '../../login/gfo.guard';
+import { NgClass } from '@angular/common';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
