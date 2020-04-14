@@ -15,6 +15,13 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-align-center",
     class: ""
   },
+  {
+    path: "/history",
+    title: "History",
+    rtlTitle: "قائمة الجدول",
+    icon: "icon-atom",
+    class: ""
+  },
   // {
   //   path: "/lol",
   //   title: "GGraph",
@@ -36,13 +43,13 @@ export const ROUTES: RouteInfo[] = [
   //   icon: "icon-notes",
   //   class: ""
   // },
-  {
-    path: "/history",
-    title: "History",
-    rtlTitle: "قائمة الجدول",
-    icon: "icon-atom",
-    class: ""
-  },
+  // {
+  //   path: "/history",
+  //   title: "History",
+  //   rtlTitle: "قائمة الجدول",
+  //   icon: "icon-atom",
+  //   class: ""
+  // },
   {
     path: "/maps",
     title: "Maps",

@@ -194,7 +194,7 @@ export class HistoryComponent implements OnInit {
                 let robj={};
                 let r:string=obj.DeviceTimeStamp;
                 let n:number = +(r.substring(5,7));
-                robj[0]= r.substring(8,10)+' '+this.month[n -1] +' '+r.substring(11,16);
+                robj[0]= r.substring(8,10)+' '+this.month[n -1] +' '+r.substring(0,4)+' '+r.substring(11,16);
                 robj[1]=obj.PFL1;
                 robj[2]=obj.PFL2;
                 robj[3]=obj.PFL3;
@@ -242,7 +242,7 @@ export class HistoryComponent implements OnInit {
                 let robj={};
                 let r:string=obj.DeviceTimeStamp;
                 let n:number = +(r.substring(5,7));
-                robj[0]= r.substring(8,10)+' '+this.month[n -1] +' '+r.substring(11,16);
+                robj[0]= r.substring(8,10)+' '+this.month[n -1] +' '+r.substring(0,4) +' '+r.substring(11,16);
                 robj[1]=obj.KWH;
                 robj[2]=obj.KVARH;
                 robj[3]=obj.KW;
@@ -276,7 +276,7 @@ export class HistoryComponent implements OnInit {
             this.t13.innerHTML='';
             this.t14.innerHTML='';
             this.g.getValues(this.lol,'868997035786613',this.nana,this.nana1).subscribe(data=>{
-
+              console.log(data);
               this.a=data;
               this.b= this.a.map(obj=>{
 
