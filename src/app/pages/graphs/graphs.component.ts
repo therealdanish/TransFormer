@@ -31,6 +31,7 @@ lol:string='';
 ww;
 ctx;
 cta;
+myChart:any;
   ngOnInit(): void {
 
     this.ww=document.getElementById("warn");
@@ -162,9 +163,13 @@ cta;
     gradientStroke3.addColorStop(1, 'rgba(66,134,121,0.15)');
     gradientStroke3.addColorStop(0.4, 'rgba(66,134,121,0.0)'); //green colors
     gradientStroke3.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
-           new Promise(resolve => setTimeout(()=>resolve(), 4000)).then(()=>{
+           new Promise(resolve => setTimeout(()=>resolve(), 5000)).then(()=>{
              console.log("fired");
-          let myChart = new Chart(this.ctx, {
+             if(this.myChart){
+              this.myChart.destroy();
+            }
+           
+           this.myChart = new Chart(this.ctx, {
             type: 'line',
             data: {
                 datasets: [{
