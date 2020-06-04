@@ -22,6 +22,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-atom",
     class: ""
   },
+
   // {
   //   path: "/lol",
   //   title: "GGraph",
@@ -56,7 +57,22 @@ export const ROUTES: RouteInfo[] = [
     rtlTitle: "لوحة القيادة",
     icon: "icon-pin",
     class: ""
-  },
+  }
+  // {
+  //   path: "http://52.168.163.234/",
+  //   title: "AI",
+  //   rtlTitle: "قائمة الجدول",
+  //   icon: "icon-atom",
+  //   class: ""
+  // },
+  // {
+  //   path: "http://52.168.163.234/fault_view",
+  //   title: "Fault Prediction",
+  //   rtlTitle: "قائمة الجدول",
+  //   icon: "icon-atom",
+  //   class: ""
+  // },
+  
   // {
   //   path: "/icons",
   //   title: "Icons",
